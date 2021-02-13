@@ -1,0 +1,83 @@
+public static void targil1 (String str) { 
+			
+	 
+		int monen = 0; 
+		int mones = 0; 
+		int monel = 0; 
+	    str = str.toLowerCase(); 
+		for(int i = 0; i<str.length();i++) 
+		{
+			
+			if ((str.charAt(i)>='a')&&(str.charAt(i)<='z')) // סופר את כל התויים שבין a ל z 
+				monel++; 
+			
+			if ((str.charAt(i)>='0')&&(str.charAt(i)<='9')) // סופר את כל הספרות בין 0 ל 9 
+				monen++; 
+			else 
+				mones++; // אחרת סופר את כל התויים וסוכם אותם לתשובה מספרית
+			
+			
+		}//for
+		System.out.println("numbers of letters:" + monen); //מדפיס את כמות האותיות בסדרה
+		System.out.println("numbers of sign:" + mones); // מדפיס את כמות הסמנים בסדרה
+		System.out.println("numbers of Digits:" + monel); // מדפיס את כמות הספרות בסדרה
+    ------------------------------------------------------------------------------------  
+    public static void Targil2 (String strs) // הגדרת משתנה מסוג מחרוזת 
+		{ 
+			String strnew=""; 
+			String strnew1=""; // הגדרנו משתנה מסוג מחרוזת חדשה 
+			for(int i=0; i<strs.length(); i++) 
+			{ 			
+				
+				if ( (strs.charAt(i)>='0')&&(strs.charAt(i)<='9') ) // סופר את כל הספרות בין 0 ל 9
+					strnew= strnew+strs.charAt(i); // לוקחת את כל הספרות ומחברת אותן למחרוזת של ספרות
+				else 
+					strnew1=strnew1 + strs.charAt(i); // במידה והם לא ספרות הן אותיות ולכן נחבר אותם כמחרוזת של אותיות
+			} 
+			String strResult=strnew+strnew1; // מחברת בין שתי המחרוזות החדשות
+			System.out.println(strResult); // הדפסת התוצאה שקבלנו בין שתי המחרוזות 
+      ------------------------------------------------------------------------------------ 
+      public static void Targil3 (String str, char tav) // נגדיר משתנה מסוג מחרוזת ומשתנה שהוא תו
+		{ 
+			int place = -1; 
+				for(int i=0; i<str.length() ; i++)
+				{
+					if(str.charAt(i) == tav) // אם התו נמצא במחרוזת תשמור את המיקום שלו ותמשיך הלאה במידה ואין עוד תווים כאלה תדפיס לי את המיקום האחרון במידה ויש תגרוס את המיקום האחרון ותשמור את המיקום הגבוה ביותר שהתו נמצא  
+						place = i; 					 
+		        }//for 
+				
+		if(place>=0) 
+			System.out.println("Last show : " + place ); // תדפיס את מיקום ההופעה של האות האחרונה
+		else  // אחרת
+			System.out.println("NF"); // תדפיס " לא נמצא"
+		  ------------------------------------------------------------------------------------------- 
+      public static void Targil4 (String str, char tav) // נגדיר משתנה מסוג מחרוזת ומשתנה מסוג תו
+		{ 
+			for(int i=0; i<str.length(); i++) // לולאת פור לתו מסויים 
+			{ 
+				if(str.charAt(i) == tav) // אם התו נמצא 
+				System.out.println (str.substring(i)); //  נדפיס את כל המחרוזת מהתו שנמצא וכך הלאה עד שנעבור על כל המחרוזת  										
+			}//for 
+      --------------------------------------------------------------------------------------------- 
+      public static void main (String[] args) 
+	{ 
+		System.out.println("Solve Function 1:");
+		targil1("C+2A<3N321C2aaa"); 
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("Solve Function 2:");
+		Targil2("a1bc2c3d"); 
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("Solve Function 3:");
+		Targil3("aBb1",'a'); 
+		
+		System.out.println();
+		System.out.println();
+		
+		System.out.println("Solve Function 4:");
+		Targil4("Java is a good language" ,'a');
+	}
+    
